@@ -53,6 +53,9 @@ function onSubmit(event) {
           refs.loadMoreBtn.classList.remove('is-hidden');
           Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
         }
+        if (hits.length < 40) {
+          refs.loadMoreBtn.classList.add('is-hidden');
+        }
       })
       .finally(() => refs.form.reset());
   }
